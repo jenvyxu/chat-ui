@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import theme from "theme";
 
 export const circle = (color, size = "8px") => css`
   width: ${size};
@@ -37,4 +38,11 @@ export const activeBar = ({
     );
     opacity: 0.6;
   }
+`;
+
+export const card = (radius = "6px", padding = "20px 30px") => css`
+  padding: ${padding};
+  background: ${({ theme }) => theme.background};
+  box-shadow: 0 18px 40px 0 rgba(0, 0, 0, 0.04);
+  border-radius: ${radius};
 `;
