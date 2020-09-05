@@ -18,7 +18,7 @@ function Icon({
 }
 
 Icon.propTypes = {
-  icon: PropTypes.element,
+  icon: PropTypes.any,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.string,
