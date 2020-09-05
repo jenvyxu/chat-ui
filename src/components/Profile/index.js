@@ -1,6 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledProfile, { SocialLinks, ContactSection } from "./style";
+import StyledProfile, {
+  SocialLinks,
+  ContactSection,
+  AlbumSection,
+  AlbumTitle,
+  Album,
+  Photo,
+  CloseIcon,
+} from "./style";
 import "styled-components/macro";
 import Avatar from "components/Avatar";
 
@@ -17,10 +25,17 @@ import {
 import Seperator from "components/Seperator";
 import Text from "components/Text";
 
+import photo1 from "assets/images/photo1.jpg";
+import photo2 from "assets/images/photo2.jpg";
+import photo3 from "assets/images/photo3.jpg";
+
+import { ReactComponent as Cross } from "assets/icons/cross.svg";
+
 /* eslint-disable jsx-a11y/accessible-emoji */
 function Profile({ children, ...rest }) {
   return (
     <StyledProfile {...rest}>
+      <CloseIcon icon={Cross} />
       <Avatar
         css={`
           margin: 26px 0;
@@ -79,6 +94,17 @@ function Profile({ children, ...rest }) {
           margin: 30px 0;
         `}
       />
+      <AlbumSection>
+        <AlbumTitle>
+          <Text type="secondary">相册 (31)</Text>
+          <a>查看全部</a>
+        </AlbumTitle>
+        <Album>
+          <Photo src={photo1} alt="" />
+          <Photo src={photo2} alt="" />
+          <Photo src={photo3} alt="" />
+        </Album>
+      </AlbumSection>
     </StyledProfile>
   );
 }
