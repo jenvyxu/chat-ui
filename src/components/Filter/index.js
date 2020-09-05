@@ -9,7 +9,7 @@ function Filter({ children, ...rest }) {
 
 Filter.Filters = ({ children, label, ...rest }) => (
   <Filters {...rest}>
-    <Text type="secondary">{label}: </Text>
+    <Text type="secondary">{label}</Text>
     {children}
   </Filters>
 );

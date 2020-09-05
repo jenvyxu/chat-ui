@@ -13,7 +13,7 @@ export default {
 
 export const Default = () => (
   <Filter>
-    <Filter.Filters label="列表排序">
+    <Filter.Filters label="列表排序: ">
       <Select>
         <Option>最新消息优先</Option>
         <Option>在线好友优先</Option>
