@@ -17,6 +17,10 @@ const SocialLinks = styled.div`
     margin: 0 9px;
   }
 `;
+const ContactSection = styled.div`
+  display: grid;
+  row-gap: 18px;
+`;
 
 export default StyledProfile;
-export { SocialLinks };
+export { SocialLinks, ContactSection };

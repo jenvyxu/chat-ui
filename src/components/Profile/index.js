@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledProfile, { SocialLinks } from "./style";
+import StyledProfile, { SocialLinks, ContactSection } from "./style";
 import "styled-components/macro";
 import Avatar from "components/Avatar";
 
@@ -15,6 +15,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Seperator from "components/Seperator";
+import Text from "components/Text";
 
 /* eslint-disable jsx-a11y/accessible-emoji */
 function Profile({ children, ...rest }) {
@@ -68,7 +69,26 @@ function Profile({ children, ...rest }) {
           margin: 30px 0;
         `}
       />
+      <ContactSection>
+        <Description label="联系电话">+86 18888888888</Description>
+        <Description label="电子邮件">example@example.com</Description>
+        <Description label="个人网站">www.baidu.com</Description>
+      </ContactSection>
+      <Seperator
+        css={`
+          margin: 30px 0;
+        `}
+      />
     </StyledProfile>
+  );
+}
+
+function Description({ label, children }) {
+  return (
+    <Paragraph>
+      <Text type="secondary">{label}: </Text>
+      <Text>{children}</Text>
+    </Paragraph>
   );
 }
 
