@@ -13,3 +13,11 @@ export const Default = () => (
     <Option>在线好友优先</Option>
   </Select>
 );
+export const FormSelect = () => (
+  <Select type="form">
+    <Option>北京市</Option>
+    <Option>上海市</Option>
+    <Option>广州市</Option>
+    <Option>深圳市</Option>
+  </Select>
+);
