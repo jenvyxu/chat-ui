@@ -14,6 +14,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import Seperator from "components/Seperator";
 
 /* eslint-disable jsx-a11y/accessible-emoji */
 function Profile({ children, ...rest }) {
@@ -62,6 +63,11 @@ function Profile({ children, ...rest }) {
         <Icon.Social icon={faGithub} bgColor="black"></Icon.Social>
         <Icon.Social icon={faLinkedin} bgColor="#2483C0"></Icon.Social>
       </SocialLinks>
+      <Seperator
+        css={`
+          margin: 30px 0;
+        `}
+      />
     </StyledProfile>
   );
 }
