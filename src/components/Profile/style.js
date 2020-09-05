@@ -12,4 +12,11 @@ const StyledProfile = styled.div`
   overflow-y: auto;
 `;
 
+const SocialLinks = styled.div`
+  & > * {
+    margin: 0 9px;
+  }
+`;
+
 export default StyledProfile;
+export { SocialLinks };

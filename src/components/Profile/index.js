@@ -1,12 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledProfile from "./style";
+import StyledProfile, { SocialLinks } from "./style";
 import "styled-components/macro";
 import Avatar from "components/Avatar";
 
 import face from "assets/images/face-male-3.jpg";
 import Paragraph from "components/Paragraph";
 import Emoji from "components/Emoji";
+import Icon from "components/Icon";
+
+import {
+  faWeibo,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 /* eslint-disable jsx-a11y/accessible-emoji */
 function Profile({ children, ...rest }) {
@@ -46,6 +53,15 @@ function Profile({ children, ...rest }) {
         帮助客户构建网站，并协助在社交网站上进行推广
         <Emoji label="fire">🔥</Emoji>
       </Paragraph>
+      <SocialLinks>
+        <Icon.Social
+          icon={faWeibo}
+          bgColor="#F06767"
+          href="www.weibo.com"
+        ></Icon.Social>
+        <Icon.Social icon={faGithub} bgColor="black"></Icon.Social>
+        <Icon.Social icon={faLinkedin} bgColor="#2483C0"></Icon.Social>
+      </SocialLinks>
     </StyledProfile>
   );
 }
