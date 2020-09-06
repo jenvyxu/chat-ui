@@ -12,7 +12,7 @@ import { ReactComponent as Plus } from "assets/icons/plus.svg";
 function FilterList({
   children,
   options,
-  filterLabel = "列表排序 ",
+  filterLabel = "列表排序: ",
   actionLabel,
   ...rest
 }) {
