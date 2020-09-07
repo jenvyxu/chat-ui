@@ -4,20 +4,11 @@ import StyledMessageList, { ChatList } from "./style";
 import MessageCard from "components/MessageCard";
 import face1 from "assets/images/face-male-1.jpg";
 import FilterList from "components/FilterList";
-import { useTrail, animated } from "react-spring";
+import { animated } from "react-spring";
+import useStaggeredList from "hook/useStaggeredList";
 
 function MessageList({ children, ...rest }) {
-  const trailAnimes = useTrail(6, {
-    transform: "translate3d(0px,0px,0px)",
-    from: { transform: "translate3d(-50px,0px,0px)" },
-    config: {
-      mass: 0.8,
-      tension: 280,
-      fricrion: 20,
-    },
-    delay: 200,
-  });
-
+  const trailAnimes = useStaggeredList(6);
   return (
     <StyledMessageList {...rest}>
       <FilterList
