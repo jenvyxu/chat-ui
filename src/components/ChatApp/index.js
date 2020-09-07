@@ -12,9 +12,11 @@ import Profile from "components/Profile";
 import { Route, Switch } from "react-router-dom";
 import BlockedList from "components/BlockedList";
 import Settings from "components/Settings";
+import VideoCall from "components/VideoCall";
 
 function ChatApp({ children, ...rest }) {
   const [showDrawer, setShowDrawer] = useState(false);
+  const [videoCalling, setVideoCalling] = useState(false);
   return (
     <StyledChatApp {...rest}>
       <Nav>
@@ -40,6 +42,9 @@ function ChatApp({ children, ...rest }) {
         </Switch>
       </SideBar>
       <Content>
+        {videoCalling && (
+          <VideoCall onHangOffClicked={() => setVideoCalling(false)} />
+        )}
         <Switch>
           <Route exact path="/settings">
             <Settings />
@@ -48,7 +53,10 @@ function ChatApp({ children, ...rest }) {
             <BlockedList />
           </Route>
           <Route path="/">
-            <Conversation onAvatarClick={() => setShowDrawer(true)} />
+            <Conversation
+              onAvatarClick={() => setShowDrawer(true)}
+              onVideoClicked={() => setVideoCalling(true)}
+            />
           </Route>
         </Switch>
       </Content>
