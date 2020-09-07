@@ -8,10 +8,10 @@ import Emoji from "components/Emoji";
 import Footer from "components/Footer";
 
 /* eslint-disable jsx-a11y/accessible-emoji */
-function Conversation({ children, ...rest }) {
+function Conversation({ onAvatarClick, children, ...rest }) {
   return (
     <StyledConversation {...rest}>
-      <TitleBar />
+      <TitleBar onAvatarClick={onAvatarClick} />
       <Conversations>
         <ChatBubble time="昨天 下午14: 26">hi Jenvy, 在忙什么呢？</ChatBubble>
         <MyChatBubble time="昨天 下午16: 30">

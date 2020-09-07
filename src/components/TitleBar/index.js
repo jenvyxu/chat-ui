@@ -13,10 +13,10 @@ import Dropdown from "components/Dropdown";
 import { DropdownItem } from "components/Dropdown/style";
 import Seperator from "components/Seperator";
 
-function TitleBar({ children, ...rest }) {
+function TitleBar({ onAvatarClick, children, ...rest }) {
   return (
     <StyledTitleBar {...rest}>
-      <Avatar status="offline" src={face} />
+      <Avatar onClick={onAvatarClick} status="offline" src={face} />
       <Title>
         <Paragraph size="large">慕容天宇</Paragraph>
         <Paragraph type="secondary">
