@@ -4,8 +4,20 @@ import StyledMessageList, { ChatList } from "./style";
 import MessageCard from "components/MessageCard";
 import face1 from "assets/images/face-male-1.jpg";
 import FilterList from "components/FilterList";
+import { useTrail, animated } from "react-spring";
 
 function MessageList({ children, ...rest }) {
+  const trailAnimes = useTrail(6, {
+    transform: "translate3d(0px,0px,0px)",
+    from: { transform: "translate3d(-50px,0px,0px)" },
+    config: {
+      mass: 0.8,
+      tension: 280,
+      fricrion: 20,
+    },
+    delay: 200,
+  });
+
   return (
     <StyledMessageList {...rest}>
       <FilterList
@@ -14,18 +26,20 @@ function MessageList({ children, ...rest }) {
       >
         <ChatList>
           {[1, 2, 3, 4, 5, 6].map((_, index) => (
-            <MessageCard
-              key={index}
-              active={index === 3}
-              replied={index % 3 === 0}
-              avatarSrc={face1}
-              name="李荣浩"
-              avatarStatus="online"
-              statusText="在线"
-              time="3 小时之前"
-              message="即使爬到最高的山上，一次也只能脚踏实地地"
-              unreadCount={2}
-            />
+            <animated.div key={index} style={trailAnimes[index]}>
+              <MessageCard
+                key={index}
+                active={index === 3}
+                replied={index % 3 === 0}
+                avatarSrc={face1}
+                name="李荣浩"
+                avatarStatus="online"
+                statusText="在线"
+                time="3 小时之前"
+                message="即使爬到最高的山上，一次也只能脚踏实地地"
+                unreadCount={2}
+              />
+            </animated.div>
           ))}
         </ChatList>
       </FilterList>
