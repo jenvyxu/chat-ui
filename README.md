@@ -10,10 +10,13 @@ cd chat-ui
 ```
 yarn start
 ```
-在浏览器输入http://localhost:3000/ 预览demo
+  在浏览器输入http://localhost:3000/ 预览demo
 
 3. 预览组件
 ```
 yarn storybook
 ```
-在浏览器输入http://localhost:6006/ 预览组件
+  在浏览器输入http://localhost:6006/ 预览组件
+
+截图
+<img src="https://github.com/jenvyxu/chat-ui/blob/master/shot.png" alt="截图" width="600">
